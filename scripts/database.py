@@ -33,7 +33,7 @@ def save_sample(cursor):
     with open(JSON_OUTPUT, "w") as f:
         json.dump([dict(zip(columns, row)) for row in rows], f, indent=4)
 
-def load_database_features(DB_PATH = "./Database/structured_features_ver2.db"):
+def load_database_features():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute("SELECT image_path, color_histogram, shape_descriptor, texture_descriptor, deep_embedding FROM image_features")

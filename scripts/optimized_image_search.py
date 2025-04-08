@@ -39,7 +39,7 @@ def extract_deep_embedding(img):
 
 # ------------------ Load Database Features ------------------
 
-def load_database_features(db_path="structured_features_ver2.db"):
+def load_database_features(db_path):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     cursor.execute("SELECT image_path, color_histogram, shape_descriptor, texture_descriptor, deep_embedding FROM image_features")
